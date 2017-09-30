@@ -1,0 +1,55 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml"
+            style="-fx-border-color: red; -fx-border-width: 3;">
+
+    <top>
+        <GridPane
+                style="-fx-border-color: blue; -fx-border-width: 1;" gridLinesVisible="true"
+                alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10" right="10" left="10" top="10"></Insets>
+            </BorderPane.margin>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50.0"/>
+                <ColumnConstraints percentWidth="50.0"/>
+            </columnConstraints>
+
+            <ComboBox fx:id="playerOnTheLeft" GridPane.columnIndex="0" maxWidth="Infinity"
+                      GridPane.hgrow="ALWAYS" onAction="#handleClickOnLeftComboBoxItem"></ComboBox>
+
+            <ComboBox fx:id="playerOnTheRight" GridPane.columnIndex="1" maxWidth="Infinity"
+                      GridPane.hgrow="ALWAYS" onAction="#handleClickOnRightComboBoxItem"></ComboBox>
+
+        </GridPane>
+    </top>
+    <left>
+       <TextArea fx:id="leftPlayerStats" prefWidth="200"/>
+    </left>
+    <center>
+        <VBox>
+            <TextArea fx:id="pointsComparationArea" prefWidth="500" prefHeight="25"/>
+            <TextArea fx:id="reboundsComparationArea" prefWidth="500" prefHeight="25"/>
+            <TextArea fx:id="assistsComparationArea" prefWidth="500" prefHeight="25"/>
+            <TextArea fx:id="blocksComparationArea" prefWidth="500" prefHeight="25"/>
+            <TextArea fx:id="stealsComparationArea" prefWidth="500" prefHeight="25"/>
+            <TextArea fx:id="minutesComparationArea" prefWidth="500" prefHeight="25"/>
+            <TextArea fx:id="gamesPlayedComparationArea" prefWidth="500" prefHeight="25"/>
+        </VBox>
+    </center>
+    <right>
+        <TextArea fx:id="rightPlayerStats" prefWidth="200"/>
+    </right>
+    <bottom>
+        <GridPane BorderPane.alignment="CENTER" alignment="CENTER" hgap="10"
+        style="-fx-background-color: white">
+            <Button fx:id="perGameButton" text="PerGame" prefWidth="100" GridPane.columnIndex="0" disable="false"
+            onAction="#handlePerGameButtonClicked"/>
+            <Button fx:id="Totals" text="Totals" prefWidth="100" GridPane.columnIndex="1"/>
+            <Button fx:id="per36Button" text="Per36" prefWidth="100" GridPane.columnIndex="2"/>
+        </GridPane>
+    </bottom>
+
+</BorderPane>
